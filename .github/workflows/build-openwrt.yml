@@ -37,7 +37,8 @@ jobs:
           make -j$(nproc) V=s
 
       - name: 上传固件
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: openwrt-firmware
-          path: bin/targets/ 
+          path: bin/targets/
+          retention-days: 5
